@@ -2,7 +2,7 @@
 
 > **알고리즘도 깨고, 성장의 껍질도 깨자!**
 
-혼자서는 꾸준히 하기 어려운 알고리즘 공부를 함께하고, 문제 풀이와 코드 공유를 통해 꾸준히 성장하는 것을 목표로 합니다.
+혼자서는 꾸준히 하기 어려운 알고리즘 공부를 함께하고, 문제 풀이와 코드 리뷰를 통해 꾸준히 성장하는 것을 목표로 합니다.
 
 ---
 
@@ -11,269 +11,443 @@
 1. [스터디 소개](#-스터디-소개)
 2. [스터디 목표](#-스터디-목표)
 3. [진행 방식](#-진행-방식)
-4. [운영 규칙](#-운영-규칙)
-5. [Repository 구조](#-repository-구조)
-6. [파일명 규칙](#-파일명-규칙)
-7. [브랜치 운영 방식](#-브랜치-운영-방식)
-8. [Git과 GitHub 사용법](#-git과-github-사용법)
-9. [Commit 규칙](#-commit-규칙)
-10. [Pull Request 규칙](#-pull-request-규칙)
-11. [코드 리뷰 규칙](#-코드-리뷰-규칙)
-12. [Git 명령어 요약](#-git-명령어-요약)
+4. [저장소 구조](#-저장소-구조)
+5. [브랜치 운영 방식](#-브랜치-운영-방식)
+6. [처음 참여하는 방법](#-처음-참여하는-방법)
+7. [매회 문제 제출 방법](#-매회-문제-제출-방법)
+8. [Pull Request 작성 방법](#-pull-request-작성-방법)
+9. [병합 후 브랜치 정리](#-병합-후-브랜치-정리)
+10. [자주 발생하는 상황](#-자주-발생하는-상황)
 
 ---
 
 ## 🥚 스터디 소개
 
-**알깨기**는 두 가지 의미를 담고 있습니다.
+알깨기 알고리즘 스터디는 정해진 문제를 꾸준히 풀고, 풀이 과정을 공유하며 함께 성장하는 알고리즘 학습 모임입니다.
 
-* 💻 **알고리즘을 깨다**: 다양한 문제를 해결하며 알고리즘 실력을 키웁니다.
-* 🥚 **알을 깨다**: 성장의 껍질을 깨고 한 단계 더 발전합니다.
+단순히 정답 코드를 제출하는 것에 그치지 않고, 다음 내용을 함께 연습합니다.
 
-혼자 고민하는 시간을 줄이고, 함께 배우며 꾸준히 성장하는 것을 목표로 합니다.
-
-| 항목     | 내용                         |
-| ------ | -------------------------- |
-| 첫 시작일  | 7월 23일 목요일                 |
-| 진행 장소  | 온라인 Discord                |
-| 진행 시간  | 매주 화요일, 목요일 22:00~23:00    |
-| 진행 기간  | 1학기 종료까지, 프로젝트 주간 제외       |
-| 문제 플랫폼 | SWEA                       |
-| 문제 난이도 | SWEA D2~D3                 |
-| 목표     | 꾸준한 문제 풀이 습관 형성 및 IM 등급 대비 |
+- 문제를 분석하고 해결 방법을 설계하는 과정
+- 시간 복잡도와 공간 복잡도를 고려하는 습관
+- 다른 사람의 풀이를 읽고 이해하는 능력
+- Git과 GitHub를 활용한 협업 방식
+- Pull Request와 코드 리뷰 경험
 
 ---
 
 ## 🎯 스터디 목표
 
-* 꾸준한 알고리즘 문제 풀이 습관 만들기
-* SWEA D2~D3 수준의 문제에 익숙해지기
-* 다양한 문제 풀이 방법 공유하기
-* 코드 리뷰를 통해 더 좋은 풀이 방법 배우기
-* IM 등급을 무난하게 통과할 수 있는 실력 만들기
+- 매주 정해진 문제를 꾸준히 풉니다.
+- 문제 풀이 과정을 설명할 수 있는 힘을 기릅니다.
+- 다른 사람의 코드를 읽고 피드백하는 습관을 만듭니다.
+- Git과 GitHub의 기본적인 협업 흐름을 익힙니다.
+- 한 학기 동안 꾸준한 알고리즘 학습 기록을 남깁니다.
 
 ---
 
-## 📚 진행 방식
+## 🗓 진행 방식
 
-1. 지정된 문제를 스터디 시간 전까지 풉니다.
-2. 자신의 개인 브랜치에 문제 풀이 파일을 업로드합니다.
-3. 개인 브랜치에서 `master` 브랜치로 Pull Request를 생성합니다.
-4. 스터디 시간에 각자의 풀이 방법을 공유합니다.
-5. 서로 다른 접근 방법과 개선할 점을 함께 이야기합니다.
-6. 남는 시간에는 자유롭게 추가 문제를 풉니다.
+- 스터디는 **주 2회 제출**을 기본으로 합니다.
+- 각 제출 회차마다 Pull Request를 생성합니다.
+- 기기 변경, 추가 풀이, 수정 등으로 필요한 경우 추가 Pull Request를 생성할 수 있습니다.
+- 문제 풀이 파일은 자신의 이름 폴더 안에 저장합니다.
+- Pull Request가 병합되면 해당 브랜치는 삭제합니다.
+- 다음 제출은 최신 `master` 브랜치에서 새로운 브랜치를 만들어 시작합니다.
 
-> **정답보다 문제를 끝까지 고민하는 과정을 더 중요하게 생각합니다.**
-
----
-
-## 📌 운영 규칙
-
-* 꾸준한 참여를 가장 중요하게 생각합니다.
-* 문제를 풀지 못해도 괜찮지만, 반드시 시도는 해옵니다.
-* 사정이 있어 참여하지 못할 경우 미리 알려주세요.
-* 다른 사람의 풀이와 의견을 존중합니다.
-* 모르는 부분은 자유롭게 질문합니다.
-* 다른 사람의 코드를 그대로 복사하여 제출하지 않습니다.
-* 이전 Pull Request가 병합된 후 다음 주차 작업을 시작합니다.
-
-### 💰 벌금 제도
-
-* 벌금은 모두 모아 회식비 또는 간식비로 사용합니다.
-* 벌금 항목과 금액은 스터디 첫날 함께 정합니다.
-
----
-
-## 📂 Repository 구조
-
-주차별 폴더 안에 각자의 이름 폴더를 생성하고, 이름 폴더 안에 문제 풀이 파일을 저장합니다.
+예시:
 
 ```text
-Algorithm-Study
-├── README.md
-├── week01
-│   ├── 홍길동
-│   │   ├── SWEA_LV1_2047_신문헤드라인.java
-│   │   └── SWEA_LV2_1926_간단한369게임.java
-│   ├── 김철수
-│   │   ├── SWEA_LV1_2047_신문헤드라인.java
-│   │   └── SWEA_LV2_1926_간단한369게임.java
-│   └── 이영희
-│       └── SWEA_LV1_2047_신문헤드라인.java
-├── week02
-│   ├── 홍길동
-│   ├── 김철수
-│   └── 이영희
-└── week03
-    ├── 홍길동
-    ├── 김철수
-    └── 이영희
-```
-
-### 폴더 생성 예시
-
-1주차에 홍길동이 문제를 푸는 경우 다음 경로에 파일을 저장합니다.
-
-```text
-week01/홍길동/SWEA_LV1_2047_신문헤드라인.java
-```
-
-2주차에는 새로운 주차 폴더 안에 자신의 이름 폴더를 생성합니다.
-
-```text
-week02/홍길동/
+화요일 제출  → week01-gildong-01
+목요일 제출  → week01-gildong-02
+추가 제출    → week01-gildong-03
+(요일에 상관 없이 -01부터 순차적으로 늘려가면 됩니다.)
 ```
 
 ---
 
-## 📄 파일명 규칙
+## 📁 저장소 구조
 
-파일명은 다음 형식을 사용합니다.
+저장소는 아래 구조를 사용합니다.
 
 ```text
-플랫폼_난이도_문제번호_문제이름.java
+repository
+├─ README.md
+├─ week01
+│  ├─ gildong
+│  │  ├─ SWEA_LV1_2047_신문헤드라인.java
+│  │  └─ SWEA_LV1_2027_대각선출력하기.java
+│  ├─ chulsu
+│  │  └─ SWEA_LV1_1933_간단한N의약수.java
+│  └─ younghee
+│     └─ SWEA_LV1_2056_연월일달력.java
+├─ week02
+│  ├─ gildong
+│  ├─ chulsu
+│  └─ younghee
+└─ ...
 ```
 
-### 예시
+### 폴더 예시
+
+본인의 이름이 `gildong`이고 1주 차 문제를 제출한다면 다음 위치에 파일을 저장합니다.
+
+```text
+week01/gildong/
+```
+
+다른 사람의 폴더는 수정하지 않습니다.
+
+### 파일명 예시
+
+SWEA 문제는 아래 형식을 사용합니다.
+
+```text
+SWEA_난이도_문제번호_문제이름.java
+```
+
+예시:
 
 ```text
 SWEA_LV1_2047_신문헤드라인.java
 SWEA_LV2_1926_간단한369게임.java
-SWEA_LV3_1206_View.java
 ```
 
-### 파일명 작성 규칙
-
-* 플랫폼 이름은 `SWEA`로 작성합니다.
-* 난이도는 `LV1`, `LV2`, `LV3` 형식으로 작성합니다.
-* 문제번호를 반드시 포함합니다.
-* 문제 이름의 띄어쓰기는 제거합니다.
-* Java 파일의 확장자는 `.java`를 사용합니다.
+파일명에는 가능하면 공백을 사용하지 않습니다.
 
 ---
 
 ## 🌿 브랜치 운영 방식
 
-각 스터디원은 자신만의 개인 브랜치를 하나 생성하고 계속 사용합니다.
+이 스터디에서는 **개인 전용 브랜치를 계속 재사용하지 않습니다.**
+
+각 Pull Request마다 최신 `master` 브랜치에서 새로운 브랜치를 생성합니다.
 
 ### 브랜치 이름
 
-브랜치 이름은 자신의 이름 또는 GitHub 아이디를 사용합니다.
-
 ```text
-honggildong
-kimchulsu
-leeyounghee
+week주차-이름-제출순번
 ```
 
-한글 이름보다 영문 이름이나 GitHub 아이디 사용을 권장합니다.
-
-### 브랜치 구조 예시
+예시:
 
 ```text
-master
-├── honggildong
-├── kimchulsu
-└── leeyounghee
+week01-gildong-01
+week01-gildong-02
+week01-gildong-03
+week02-gildong-01
 ```
 
-개인 브랜치는 최초 한 번만 생성합니다.
-
-매주 새로운 브랜치를 생성하지 않고, 자신의 개인 브랜치를 계속 사용합니다.
-
-### 주의 사항
-
-이전 주차 Pull Request가 병합되기 전에 다음 주차 파일을 같은 브랜치에 올리면, 기존 Pull Request에 다음 주차 작업까지 함께 포함될 수 있습니다.
-
-따라서 반드시 다음 순서로 진행합니다.
+### 운영 흐름
 
 ```text
-이전 Pull Request 병합 확인
-        ↓
-master 브랜치 최신화
-        ↓
-개인 브랜치에 master 반영
-        ↓
-새로운 주차 문제 풀이 시작
+master 최신화
+    ↓
+새 브랜치 생성
+    ↓
+문제 풀이 및 커밋
+    ↓
+원격 저장소에 Push
+    ↓
+Pull Request 생성
+    ↓
+코드 리뷰
+    ↓
+Squash and merge
+    ↓
+브랜치 삭제
+    ↓
+다음 제출 시 새 브랜치 생성
 ```
+
 
 ---
 
-## 🚀 Git과 GitHub 사용법
+## 🚀 처음 참여하는 방법
 
-## 1. Git 설치 확인
+### 1. Git 설치 확인
 
-터미널 또는 Git Bash에서 다음 명령어를 입력합니다.
+터미널에서 다음 명령어를 입력합니다.
 
 ```bash
 git --version
 ```
 
-버전 정보가 출력되면 Git이 정상적으로 설치된 것입니다.
-
-```text
-git version 2.x.x
-```
+버전 정보가 표시되면 Git이 설치된 상태입니다.
 
 ---
 
-## 2. Repository Clone
+### 2. 저장소 Clone
 
-Repository를 자신의 컴퓨터로 가져옵니다.
-
-이 작업은 최초 한 번만 진행합니다.
+GitHub 저장소의 주소를 복사한 뒤 다음 명령어를 실행합니다.
 
 ```bash
-git clone Repository_URL
+git clone 저장소_URL
 ```
 
 예시:
 
 ```bash
-git clone https://github.com/organization/algorithm-study.git
-```
-
-Clone이 완료되면 Repository 폴더로 이동합니다.
-
-```bash
-cd algorithm-study
-```
-
-현재 폴더의 파일을 확인합니다.
-
-Windows:
-
-```bash
-dir
-```
-
-macOS 또는 Linux:
-
-```bash
-ls
+git clone https://github.com/ssafy-s16-c15/c15-algorithm.git
 ```
 
 ---
 
-## 3. 현재 브랜치 확인
+### 3. 저장소 폴더로 이동
+
+```bash
+cd 저장소이름
+```
+
+예시:
+
+```bash
+cd c15-algorithm
+```
+
+---
+
+### 4. 현재 브랜치 확인
 
 ```bash
 git branch
 ```
 
-현재 위치한 브랜치 앞에는 `*` 표시가 나타납니다.
+`master` 앞에 `*` 표시가 있으면 현재 `master` 브랜치에 있는 것입니다.
 
 ```text
 * master
 ```
 
+다른 브랜치에 있다면 다음 명령어로 이동합니다.
+
+```bash
+git switch master
+```
+
 ---
 
-## 4. 개인 브랜치 생성
+### 5. 최신 내용 가져오기
 
-개인 브랜치는 최초 한 번만 생성합니다.
+```bash
+git pull origin master
+```
 
-먼저 `master` 브랜치로 이동합니다.
+---
+
+## 💻 매회 문제 제출 방법
+
+아래 과정은 문제를 제출할 때마다 반복합니다.
+
+### 1. `master` 브랜치로 이동
+
+```bash
+git switch master
+```
+
+---
+
+### 2. 최신 `master` 가져오기
+
+```bash
+git pull origin master
+```
+
+새 브랜치를 만들기 전에 반드시 최신 상태로 업데이트합니다.
+
+---
+
+### 3. 제출용 브랜치 생성
+
+첫 번째 제출이라면:
+
+```bash
+git switch -c week01-gildong-01
+```
+
+두 번째 제출이라면:
+
+```bash
+git switch -c week01-gildong-02
+```
+
+추가 제출이라면:
+
+```bash
+git switch -c week01-gildong-03
+```
+
+`gildong` 부분에는 자신의 이름 또는 GitHub 아이디를 작성합니다.
+
+---
+
+### 4. 현재 브랜치 확인
+
+```bash
+git branch
+```
+
+예시:
+
+```text
+  master
+* week01-gildong-01
+```
+
+반드시 제출용 브랜치에서 작업합니다.
+
+---
+
+### 5. 문제 풀이 파일 작성
+
+자신의 주차별 이름 폴더에 파일을 저장합니다.
+
+```text
+week01/gildong/SWEA_LV1_2047_신문헤드라인.java
+```
+
+폴더가 없다면 직접 생성합니다.
+
+---
+
+### 6. 변경된 파일 확인
+
+```bash
+git status
+```
+
+본인이 추가하거나 수정한 파일만 표시되는지 확인합니다.
+
+---
+
+### 7. 파일을 Staging Area에 추가
+
+특정 파일만 추가하는 것을 권장합니다.
+
+```bash
+git add week01/gildong/SWEA_LV1_2047_신문헤드라인.java
+```
+
+본인 폴더 전체를 추가하려면:
+
+```bash
+git add week01/gildong
+```
+
+모든 변경사항을 한 번에 추가하는 명령어는 주의해서 사용합니다.
+
+```bash
+git add .
+```
+
+---
+
+### 8. 커밋 생성
+
+```bash
+git commit -m "code: Week01 문제 풀이"
+```
+
+문제별로 나누어 커밋해도 됩니다.
+
+```bash
+git commit -m "code: SWEA 2047 신문 헤드라인"
+```
+
+```bash
+git commit -m "code: SWEA 2027 대각선 출력하기"
+```
+
+---
+
+### 9. 원격 저장소에 Push
+
+Push하는 브랜치는 다음 명령어를 사용합니다.
+
+```bash
+git push origin week01-gildong-01
+```
+
+
+---
+
+## 🔀 Pull Request 작성 방법
+
+Push가 완료되면 GitHub 저장소로 이동합니다.
+
+보통 상단에 다음과 같은 버튼이 표시됩니다.
+
+```text
+Compare & pull request
+```
+
+버튼이 표시되지 않는다면 `Pull requests` 메뉴에서 직접 생성합니다.
+
+### 브랜치 설정 확인
+
+```text
+base: master
+compare: week01-gildong-01
+```
+
+- `base`는 병합될 대상 브랜치입니다.
+- `compare`는 자신이 작업한 브랜치입니다.
+
+두 브랜치가 반대로 설정되지 않았는지 반드시 확인합니다.
+
+---
+
+### PR 제목
+
+```text
+[Week01] gildong 문제 풀이 1차
+```
+
+예시:
+
+```text
+[Week01] gildong 문제 풀이 2차
+[Week02] chulsu 문제 풀이 1차
+```
+
+---
+
+### 병합 방식
+
+Pull Request는 **Squash and merge** 방식으로 병합합니다.
+
+Squash and merge는 여러 커밋을 하나의 커밋으로 합쳐 `master` 브랜치에 반영합니다.
+
+예시:
+
+```text
+code: SWEA 2047 풀이
+code: SWEA 2027 풀이
+docs: 설명 추가
+```
+
+위 커밋들이 병합되면 `master`에는 다음과 같이 하나의 커밋으로 기록될 수 있습니다.
+
+```text
+[Week01] gildong 문제 풀이 1차 (#12)
+```
+
+---
+
+## 🧹 병합 후 브랜치 정리
+
+Pull Request가 병합되면 GitHub에서 해당 원격 브랜치를 삭제합니다.
+
+GitHub의 Pull Request 화면에서 다음 버튼을 클릭합니다.
+
+```text
+Delete branch
+```
+
+원격 브랜치를 삭제해도 병합된 코드는 `master`에 남아 있으므로 사라지지 않습니다.
+
+### 로컬 브랜치 삭제
+
+먼저 `master`로 이동합니다.
 
 ```bash
 git switch master
@@ -285,456 +459,216 @@ git switch master
 git pull origin master
 ```
 
-개인 브랜치를 생성하면서 이동합니다.
+병합이 완료된 로컬 브랜치를 삭제합니다.
 
 ```bash
-git switch -c 브랜치이름
+git branch -d week01-gildong-01
+```
+
+이제 다음 제출용 브랜치를 생성합니다.
+
+```bash
+git switch -c week01-gildong-02
+```
+
+---
+
+## ✍️ 커밋 및 PR 작성 규칙
+
+### 커밋 메시지 형식
+
+```text
+종류: 내용
+```
+
+권장 종류:
+
+| 종류 | 설명 |
+|---|---|
+| `code` | 문제 풀이 코드 추가 또는 수정 |
+| `fix` | 잘못된 코드 수정 |
+| `docs` | README 또는 설명 문서 수정 |
+| `refactor` | 동작은 같지만 코드 구조 개선 |
+| `add` | 추가 풀이 작성 |
+| `chore` | 설정이나 기타 작업 |
+
+예시:
+
+```text
+code: SWEA 2047 신문 헤드라인 풀이
+fix: SWEA 1926 반복문 범위 수정
+docs: Week01 풀이 설명 추가
+refactor: 중복 조건문 정리
+```
+
+
+---
+
+## 🧯 자주 발생하는 상황
+
+### 1. `master`에서 작업해 버린 경우
+
+아직 커밋하지 않았다면 새 브랜치를 생성합니다.
+
+```bash
+git switch -c week01-gildong-01
+```
+
+현재 변경사항은 새 브랜치로 함께 이동합니다.
+
+그다음 정상적으로 커밋하고 Push합니다.
+
+```bash
+git add week01/gildong
+git commit -m "code: Week01 문제 풀이"
+git push -u origin week01-gildong-01
+```
+
+---
+
+### 2. 브랜치 이름을 잘못 만든 경우
+
+아직 Push하지 않았다면 로컬 브랜치 이름을 변경합니다.
+
+```bash
+git branch -m 올바른브랜치이름
 ```
 
 예시:
 
 ```bash
-git switch -c honggildong
-```
-
-생성한 개인 브랜치를 원격 Repository에 처음으로 올립니다.
-
-```bash
-git push -u origin 브랜치이름
-```
-
-예시:
-
-```bash
-git push -u origin honggildong
-```
-
-`-u` 옵션을 사용하면 이후부터는 브랜치 이름을 생략하고 `git push`만 입력할 수 있습니다.
-
----
-
-## 5. 매주 작업 시작 전 최신화
-
-매주 문제 풀이를 시작하기 전에 `master` 브랜치의 최신 내용을 자신의 개인 브랜치에 반영해야 합니다.
-
-### 5-1. master 브랜치로 이동
-
-```bash
-git switch master
-```
-
-### 5-2. 원격 master 브랜치의 최신 내용 가져오기
-
-```bash
-git pull origin master
-```
-
-### 5-3. 개인 브랜치로 이동
-
-```bash
-git switch honggildong
-```
-
-자신의 브랜치 이름으로 변경하여 사용합니다.
-
-### 5-4. 최신 master 내용 병합
-
-```bash
-git merge master
-```
-
-이제 개인 브랜치에도 최신 `master` 브랜치의 내용이 반영됩니다.
-
----
-
-## 6. 주차별 폴더와 이름 폴더 생성
-
-예를 들어 1주차에 홍길동이 문제를 푸는 경우 다음 구조로 폴더를 생성합니다.
-
-```text
-week01/홍길동/
-```
-
-문제 풀이 파일은 해당 폴더 안에 저장합니다.
-
-```text
-week01/홍길동/SWEA_LV1_2047_신문헤드라인.java
-```
-
-다음 주에는 `week02` 폴더 안에 자신의 이름 폴더를 생성합니다.
-
-```text
-week02/홍길동/
+git branch -m week01-gildong-01
 ```
 
 ---
 
-## 7. 변경사항 확인
+### 3. Pull Request에 파일이 너무 많이 포함된 경우
 
-파일을 추가하거나 수정한 후 다음 명령어로 변경사항을 확인합니다.
+먼저 변경된 파일을 확인합니다.
 
 ```bash
 git status
 ```
 
-예시:
+커밋에 포함된 파일을 확인합니다.
 
-```text
-Untracked files:
-  week01/홍길동/SWEA_LV1_2047_신문헤드라인.java
+```bash
+git show --stat
 ```
+
+다른 사람의 파일이나 관계없는 파일을 수정했다면 해당 변경사항을 되돌린 뒤 다시 커밋합니다.
+
+작업 상황에 따라 복구 방법이 달라질 수 있으므로 임의로 강제 Push하지 말고 스터디원에게 먼저 공유합니다.
 
 ---
 
-## 8. 파일 추가
+### 4. Push가 거절되는 경우
 
-모든 변경 파일을 추가합니다.
-
-```bash
-git add .
-```
-
-특정 파일만 추가하려면 파일 경로를 입력합니다.
+원격 브랜치에 다른 커밋이 있다면 먼저 가져옵니다.
 
 ```bash
-git add week01/홍길동/SWEA_LV1_2047_신문헤드라인.java
-```
-
-특정 폴더 전체를 추가할 수도 있습니다.
-
-```bash
-git add week01/홍길동/
-```
-
-파일이 정상적으로 추가되었는지 확인합니다.
-
-```bash
-git status
-```
-
----
-
-## 9. Commit
-
-추가한 파일을 Commit합니다.
-
-```bash
-git commit -m "커밋 메시지"
+git pull origin 현재브랜치이름
 ```
 
 예시:
 
 ```bash
-git commit -m "feat: Week01 SWEA 문제 풀이"
+git pull origin week01-gildong-01
 ```
 
-한 문제씩 Commit하는 경우:
-
-```bash
-git commit -m "feat: SWEA 2047 신문헤드라인 풀이"
-```
-
-Commit은 현재까지의 작업 내용을 저장하는 과정입니다.
-
----
-
-## 10. Push
-
-Commit한 내용을 자신의 원격 개인 브랜치에 올립니다.
+충돌이 없다면 다시 Push합니다.
 
 ```bash
 git push
 ```
 
-최초 Push에서 `-u` 설정을 하지 않았다면 다음과 같이 입력합니다.
-
-```bash
-git push -u origin honggildong
-```
-
-Push가 완료되면 GitHub에서 자신의 브랜치를 확인할 수 있습니다.
-
 ---
 
-## 11. Pull Request 생성
+### 5. Merge Conflict가 발생한 경우
 
-Push가 완료되면 GitHub Repository에 접속합니다.
-
-GitHub 화면에 나타나는 **Compare & pull request** 버튼을 클릭합니다.
-
-버튼이 나타나지 않는 경우 다음 순서로 진행합니다.
-
-1. GitHub Repository의 `Pull requests` 메뉴를 클릭합니다.
-2. `New pull request` 버튼을 클릭합니다.
-3. `base` 브랜치를 `master`로 선택합니다.
-4. `compare` 브랜치를 자신의 개인 브랜치로 선택합니다.
-
-예시:
+충돌이 발생한 파일에는 다음과 같은 표시가 나타납니다.
 
 ```text
-base: master ← compare: honggildong
+<<<<<<< HEAD
+현재 브랜치의 코드
+=======
+가져오려는 브랜치의 코드
+>>>>>>> master
 ```
 
-PR 제목과 내용을 작성한 후 `Create pull request` 버튼을 클릭합니다.
-
----
-
-## 12. Pull Request 병합 후 다음 주 준비
-
-Pull Request가 `master` 브랜치에 병합된 것을 확인합니다.
-
-이후 로컬의 `master` 브랜치를 최신화합니다.
-
-```bash
-git switch master
-git pull origin master
-```
-
-개인 브랜치로 이동합니다.
-
-```bash
-git switch honggildong
-```
-
-최신 `master` 내용을 개인 브랜치에 병합합니다.
-
-```bash
-git merge master
-```
-
-병합된 내용을 개인 원격 브랜치에도 반영합니다.
-
-```bash
-git push
-```
-
-이후 새로운 주차 폴더에서 다음 문제 풀이를 시작합니다.
+필요한 코드만 남기고 아래 충돌 표시를 모두 삭제합니다.
 
 ```text
-week02/홍길동/
+<<<<<<< HEAD
+=======
+>>>>>>> master
 ```
 
----
-
-## 13. 작업 도중 master 변경사항 반영하기
-
-다른 사람의 Pull Request가 병합되어 `master` 브랜치가 변경된 경우, 다음 명령어로 최신 내용을 가져올 수 있습니다.
+수정 후 다시 커밋합니다.
 
 ```bash
-git switch master
-git pull origin master
-git switch honggildong
-git merge master
-```
-
-개인 브랜치에서 직접 다음 명령어를 사용할 수도 있습니다.
-
-```bash
-git pull origin master
-```
-
-하지만 Git을 처음 사용하는 경우 현재 브랜치를 혼동할 수 있으므로, 아래 방법을 권장합니다.
-
-```bash
-git switch master
-git pull origin master
-git switch 개인브랜치
-git merge master
-```
-
----
-
-## 💬 Commit 규칙
-
-Commit 메시지는 작업 내용을 알기 쉽게 작성합니다.
-
-### 기본 형식
-
-```text
-종류: 작업 내용
-```
-
-### Commit 종류
-
-| 종류         | 설명              |
-| ---------- | --------------- |
-| `code`     | 새로운 문제 풀이 파일 추가 |
-| `fix`      | 잘못된 코드 수정       |
-| `add`      | 정답은 같지만 코드를 개선  |
-| `docs`     | README 등 문서 수정  |
-| `chore`    | 폴더 정리 등 기타 작업   |
-
-### 예시
-
-```text
-code: Week01 SWEA 문제 풀이
-code: SWEA 2047 신문헤드라인 풀이
-fix: SWEA 1926 출력 오류 수정
-add: SWEA 2047 반복문 개선
-docs: README Git 사용법 수정
-chore: 파일 위치 수정(week01->week02)
-```
-
----
-
-## 📬 Pull Request 규칙
-
-### PR 제목
-
-다음 형식을 사용합니다.
-
-```text
-[Week주차] 이름
-```
-
-예시:
-
-```text
-[Week01] 홍길동
-[Week02] 김철수
-```
-
----
-
-## 🔄 Git Workflow
-
-매주 다음 순서로 진행합니다.
-
-```text
-이전 Pull Request 병합 확인
-              ↓
-master 브랜치로 이동
-              ↓
-master 최신화
-              ↓
-개인 브랜치로 이동
-              ↓
-master 내용을 개인 브랜치에 병합
-              ↓
-주차별 이름 폴더에 문제 풀이 저장
-              ↓
-git add
-              ↓
-git commit
-              ↓
-git push
-              ↓
-개인 브랜치에서 master로 Pull Request 생성
-              ↓
-코드 리뷰 및 Merge
-```
-
----
-
-## 🧾 Git 명령어 요약
-
-### 최초 한 번만 실행
-
-```bash
-git clone Repository_URL
-cd Repository이름
-
-git switch master
-git pull origin master
-
-git switch -c 개인브랜치
-git push -u origin 개인브랜치
-```
-
-### 매주 작업 시작 전
-
-```bash
-git switch master
-git pull origin master
-
-git switch 개인브랜치
-git merge master
-```
-
-### 문제 풀이 후
-
-```bash
-git status
-git add .
-git commit -m "feat: Week01 SWEA 문제 풀이"
-git push
-```
-
-### Pull Request 병합 후
-
-```bash
-git switch master
-git pull origin master
-
-git switch 개인브랜치
-git merge master
-git push
-```
-
----
-
-## ⚠️ 자주 발생하는 상황
-
-### 현재 브랜치를 확인하고 싶을 때
-
-```bash
-git branch
-```
-
-### 브랜치를 변경하고 싶을 때
-
-```bash
-git switch 브랜치이름
-```
-
-### 개인 브랜치를 처음 생성할 때
-
-```bash
-git switch -c 브랜치이름
-```
-
-### Commit할 파일이 없다고 나올 때
-
-```text
-nothing to commit, working tree clean
-```
-
-변경된 파일이 없거나 이미 Commit한 상태입니다.
-
-다음 명령어로 상태를 확인합니다.
-
-```bash
-git status
-```
-
-### Push 전에 원격 변경사항이 있다고 나올 때
-
-먼저 `master` 브랜치를 최신화한 후 개인 브랜치에 병합합니다.
-
-```bash
-git switch master
-git pull origin master
-
-git switch 개인브랜치
-git merge master
-git push
-```
-
-### Merge conflict가 발생했을 때
-
-혼자 해결하기보다 스터디원에게 상황을 공유한 후 함께 해결합니다.
-
-충돌을 해결한 뒤 다음 명령어를 실행합니다.
-
-```bash
-git add .
+git add 충돌을해결한파일
 git commit -m "fix: merge conflict 해결"
 git push
 ```
 
 ---
 
+### 6. 첫 번째 PR 병합 후 추가 제출이 필요한 경우
 
-> **혼자 풀면 숙제, 함께 풀면 성장.**
+병합된 브랜치를 다시 사용하지 않습니다.
 
-🥚 **알깨기**에서 함께 알고리즘도 깨고, 성장의 껍질도 깨봅시다! 🚀
+최신 `master`에서 새로운 브랜치를 만듭니다.
+
+```bash
+git switch master
+git pull origin master
+git switch -c week01-gildong-02
+```
+
+추가 제출이라면 순번을 증가시킵니다.
+
+```bash
+git switch -c week01-gildong-03
+```
+
+---
+
+### 7. 같은 PR에 문제를 추가하고 싶은 경우
+
+Pull Request가 아직 병합되지 않았다면 같은 브랜치에서 작업을 이어갑니다.
+
+```bash
+git switch week01-gildong-01
+```
+
+파일 추가 후:
+
+```bash
+git add week01/gildong
+git commit -m "code: SWEA 추가 문제 풀이"
+git push
+```
+
+기존 Pull Request에 자동으로 반영됩니다.
+
+---
+
+### 8. 다른 사람의 코드를 참고하고 싶은 경우
+
+코드를 읽는 것은 가능하지만, 다른 사람의 폴더에 직접 수정하거나 커밋하지 않습니다.
+
+피드백은 해당 Pull Request의 리뷰 또는 댓글로 남깁니다.
+
+---
+
+## 🌱 함께 지켜요
+
+- 정답 코드만 복사하지 않고 스스로 고민합니다.
+- 풀이가 완벽하지 않아도 과정을 공유합니다.
+- 서로 다른 풀이 방식을 존중합니다.
+- 피드백은 구체적이고 친절하게 작성합니다.
+- 꾸준히 참여하며 함께 성장합니다.
+
+> 처음에는 Git과 알고리즘이 모두 어렵게 느껴질 수 있습니다.  
+> 실수하더라도 함께 해결하면서 하나씩 익혀 나갑시다!
