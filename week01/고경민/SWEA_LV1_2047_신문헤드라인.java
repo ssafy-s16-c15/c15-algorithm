@@ -6,6 +6,9 @@ class Solution
         Scanner sc = new Scanner(System.in);
         String c=sc.next();
         System.out.println(c.toUpperCase());
+
+
+        
  
     }
 }
