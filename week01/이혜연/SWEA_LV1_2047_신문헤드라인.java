@@ -5,7 +5,7 @@
 // 3. 클래스 내용을 해석 (class)
 // 순서로 처리하기 때문
 
-package d1; // 자바 파일 순서는 정해져 있음 1. package (가장 위)
+// 자바 파일 순서는 정해져 있음 1. package (가장 위)
 
 import java.util.Scanner; // 2. import 
 
