@@ -1,15 +1,18 @@
+package week01;
+
 import java.util.Scanner;
 import java.io.FileInputStream;
 
 
-public class SWEA_LV2_1959_두개의숫자열
-{
+public class SWEA_LV2_1986_두개의숫자열 {
+
+
 	public static void main(String args[]) throws Exception
 	{
 		
 		Scanner sc = new Scanner(System.in);
 		int T;
-		T=sc.nextInt(); // 테스트 케이스 갯수
+		T=sc.nextInt();
 
 		for(int test_case = 1; test_case <= T; test_case++)
 		{
@@ -40,20 +43,11 @@ public class SWEA_LV2_1959_두개의숫자열
                 }
 
             } else { // n이 더 클 때
-                int[] arrA = new int[m]; // 짧은 배열
-                int[] arrB = new int[n];  // 긴 배열
-                
-                for(int i=0 ; i<m ; i++) {
-                arrA[i] = sc.nextInt();
-                }
-                for(int i=0 ; i<n ; i++) {
-                arrB[i] = sc.nextInt();
-                }
 
                  for(int i=0 ; i<n-m+1 ; i++) {
                     int sum = 0;
                     for(int j=0 ; j<m ; j++) {
-                        sum += arrA[j] * arrB[j+i];
+                         sum += arrB[j] * arrA[j+i];
                     }
                     max = Math.max(sum, max);
                 }
