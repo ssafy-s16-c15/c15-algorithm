@@ -1,10 +1,12 @@
+package week01;
 
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.util.Arrays;
 
-public class SWEA_LV2_1989_초심자의회문검사
-{
+
+public class SWEA_LV2_1989_초심자의회문검사 {
+
 	public static void main(String args[]) throws Exception
 	{
 	
@@ -31,4 +33,5 @@ public class SWEA_LV2_1989_초심자의회문검사
 		 System.out.println("#" + test_case + " " + answer);
 	}
     }
+	
 }
