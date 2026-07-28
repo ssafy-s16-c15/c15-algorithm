@@ -1,0 +1,18 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Java build outputs
+bin/
+out/
+*.class
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
