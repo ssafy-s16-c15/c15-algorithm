@@ -5,7 +5,7 @@
  * P, Q, R, S, W 순서대로 테스트 케이스 주어짐
  */
 
-package week02.서주영;
+package LV2;
 
 import java.util.Scanner;
 
@@ -16,7 +16,8 @@ public class SWEA_LV2_1284_수도요금경쟁 {
         System.out.println("테스트 케이스 수와 테스트 케이스 작성: ");
         int t = sc.nextInt(); // 테스트 케이스 수
 
-        for (int i = 0; i<t; i++) {
+        int loop = 0;
+        while (loop < t) {
             int ans = 0;
             int P = sc.nextInt();
             int Q = sc.nextInt();
@@ -41,8 +42,10 @@ public class SWEA_LV2_1284_수도요금경쟁 {
             } else {
                 ans = B;
             }
-            System.out.println("#" + t+1 + " " + ans);
-
-        } // 테스트 케이스 수만큼 반복
+            
+            loop++;
+            System.out.println("#" + loop + " " + ans);
+        	
+        }
     }
 }

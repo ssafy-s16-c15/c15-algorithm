@@ -11,7 +11,7 @@
  * 0~9 인덱스 가진 배열 생성 -> switch로 해당하는 칸 채우기 -> 반복문으로 돌면서 빈 칸 있나 확인 -> 없으면 그때의 answer 출력
  */
 
-package week02.서주영;
+package LV2;
 
 import java.util.Scanner;
 
@@ -25,8 +25,10 @@ public class SWEA_LV2_1288_새로운불면증치료법 {
         boolean b = false;
         boolean zero = false;
         int count = 0;
-        for (int i = 0; i<t; i++) {
-            int cm = sc.nextInt();
+        
+        int loop = 0;
+        while (loop < t) {
+        	int cm = sc.nextInt();
             int g = 2; // 곱하기
             while (!b && !zero) { // 모든 숫자가 초깃값(0)이 아닐 때까지 반복
                 String[] sArr = String.valueOf(cm).split("");
@@ -47,8 +49,10 @@ public class SWEA_LV2_1288_새로운불면증치료법 {
 
                 cm *= g++;
             } // 배열이 다 찰 때까지 반복 boolean b로 확인
-            System.out.println("#" + i+1 + cm*(g-1));
-
-        } // 테스트 케이스 수만큼 반복
+            
+            loop++;
+            System.out.println("#" + loop + cm*(g-1));
+        	
+        }
     }
 }
