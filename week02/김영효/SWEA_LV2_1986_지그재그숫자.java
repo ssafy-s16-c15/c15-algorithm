@@ -10,7 +10,7 @@ public class ZZ_Number_1986 {
 
 		for(int test_case = 1; test_case <= T; test_case++)
 		{
-					int N = sc.nextInt();
+			int N = sc.nextInt();
 			
 			if((N & 0x01) == 0)
 				System.out.printf("#%d %d\n",test_case, - N/2);
