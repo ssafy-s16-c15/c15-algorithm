@@ -24,6 +24,8 @@ public class 1961_숫자회전배열 {
 						numbers_tmp1[j][ N - i - 1] = numbers[i][j];              		
                 }
             }    
+            
+
             for(int i = 0; i < N; i++){	
                 for(int j = 0; j < N; j++){
 						numbers_tmp2[j][ N - i - 1] = numbers_tmp1[i][j];              		
